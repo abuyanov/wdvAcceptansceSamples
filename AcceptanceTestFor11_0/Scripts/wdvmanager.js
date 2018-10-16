@@ -15,7 +15,9 @@ $(function () {
             parent: $('.atala-document-container'),
             toolbarparent: $('.atala-document-toolbar'),
             serverurl: serverUrl,
-            allowannotations: true
+            allowannotations: true,
+            savepath: 'saved',
+            savefileformat:'pdf'
         });
         // Initialize Thumbnail Viewer
         thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
@@ -26,7 +28,9 @@ $(function () {
             // Note that specify relative URL to our
             // sample document on server here:
             documenturl: 'Documents/Test.pdf',
-            viewer: viewer
+            viewer: viewer,
+            allowannotations: true,
+            allowdragdrop: true
         });
 
         // Initialize Second Thumbnail
@@ -38,16 +42,22 @@ $(function () {
             // Note that specify relative URL to our
             // sample document on server here:
             documenturl: 'Documents/Example_.pdf',
-            viewer: viewer
+            allowdragdrop: true,
+            viewer: viewer,
+            allowannotations: true
         });
 
+        thumb2.bind({
+            'thumbdragstart':onDrugDtart,
+            'thumbdragend': onDrugEnd,
+            'thumbdragcomplete': onDrugComplete
+        });
 
-        //thumbs.activate()
-        var btn2 = $("#btnActivateRight");
-        btn2.disabled = false;
-
-        appendStatus("Left thumbnailer is active? " + thumbs.isActive())
-        appendStatus("Right thumbnailer is active? " + thumb2.isActive())
+        thumbs.bind({
+            'thumbdragstart': onDrugDtart,
+            'thumbdragend': onDrugEnd,
+            'thumbdragcomplete': onDrugComplete
+        });
 
     } catch (error) {
         alert('Thrown error: ' + error.description);
@@ -85,3 +95,18 @@ function getThumbStatuses() {
     appendStatus("Right thumbnailer is active? " + thumb2.isActive())
     appendStatus("Left thumbnailer is active? " + thumbs.isActive())
 };
+
+//Drug and Drop events
+
+function onDrugDtart(evnt) {
+    appendStatus("Drug'n'drop started. Page drugged: " + evnt.dragindex)
+};
+function onDrugEnd(evnt, data) {
+    appendStatus("Drug'n'drop almost ended.")
+    appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
+
+}
+function onDrugComplete(evnt, data) {
+    appendStatus("Drug'n'drop completed.")
+    appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
+}
