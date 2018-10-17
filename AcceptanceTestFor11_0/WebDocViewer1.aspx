@@ -13,8 +13,8 @@
     <script src="Scripts/wdvmanager.js" type="text/javascript"></script>
 
     <!-- Style for Web Viewer -->
-    <link href="../Content/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
-    <link href="../Scripts/atalaWebDocumentViewer.css" rel="Stylesheet" type="text/css" />
+    <link href="Content/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+    <link href="Scripts/atalaWebDocumentViewer.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <h1>Atalasoft Web Document Viewer Demo</h1>
@@ -32,9 +32,10 @@
                 </td>
             </tr>
             <tr>
-                <td> <div class="atala-document-thumbnailer" style="width: 200px; height: 500px; float: left"></div></td>
+             <td> <div class="atala-document-thumbnailer" style="width: 200px; height: 500px; float: left"></div></td>
                 <td> <div class="atala-document-container" style="width: 900px; height: 500px; float: left"></div> </td>
                 <td> <div class="atala-document-thumbnailer_2" style="width: 200px; height: 500px; float: left"></div></td>
+                
             </tr>
         </table>
 

@@ -139,10 +139,12 @@
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="MultiSelect.aspx" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\multiSelectWdv.js" />
     <Content Include="WebDocViewer1.aspx" />
     <Content Include="Scripts\atalaWebDocumentViewer.css" />
     <Content Include="Scripts\atalaWebDocumentViewer.js" />
@@ -162,6 +164,13 @@
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MultiSelect.aspx.cs">
+      <DependentUpon>MultiSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiSelect.aspx.designer.cs">
+      <DependentUpon>MultiSelect.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebDocViewer1.aspx.cs">
       <DependentUpon>WebDocViewer1.aspx</DependentUpon>

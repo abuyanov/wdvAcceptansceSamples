@@ -17,7 +17,8 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
-            savefileformat:'pdf'
+            savefileformat: 'jpg',
+            //burn:true
         });
         // Initialize Thumbnail Viewer
         thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
@@ -99,14 +100,14 @@ function getThumbStatuses() {
 //Drug and Drop events
 
 function onDrugDtart(evnt) {
-    appendStatus("Drug'n'drop started. Page drugged: " + evnt.dragindex)
+    appendStatus("Drug'n'drop started. Page is going to be drugged: " + evnt.dragindex)
 };
 function onDrugEnd(evnt, data) {
     appendStatus("Drug'n'drop almost ended.")
-    appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
+    //appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
 
 }
 function onDrugComplete(evnt, data) {
     appendStatus("Drug'n'drop completed.")
-    appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
+    //appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
 }
