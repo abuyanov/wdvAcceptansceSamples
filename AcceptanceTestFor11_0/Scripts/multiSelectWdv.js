@@ -101,6 +101,7 @@ function onDocLoaded() {
     appendStatus("Document contains " + numPages + " pages.")
     var upLimit = numPages - 1
     document.getElementById('PageToSelectNum').setAttribute('max', upLimit);
+    //document.getElementById('targetindx').setAttribute('max', upLimit);
 }
 
 function onThumbSelected(e) {
@@ -109,4 +110,33 @@ function onThumbSelected(e) {
 
 function onThumbDeselected(e) {
     appendStatus("Thumb unselected " + e.index);
+}
+
+function deletePages() {
+    var pagesToDel = $("#pagestodel").val().split(",");
+    if (pagesToDel.length == 1) {
+        var outmsg = "Page " + pagesToDel + " was deleted"
+    } else {
+        var outmsg = "Pages " + pagesToDel + " were deleted"
+    }
+    thumbs.document.removePages(pagesToDel, appendStatus(outmsg));
+}
+
+function rotatePages() {
+    var pages = $("#pagestorot").val().split(",");
+    var angles = $("#anglestorot").val().split(",");
+    if (angles.length > 0 && pages.length > 0) {
+        if (angles.length == pages.length) {
+            thumbs.document.rotatePages(pages, angles, appendStatus("Pages were rotated"))
+        } else {
+            thumbs.document.rotatePages(pages, angles[0], appendStatus("Pages were rotated"))
+        }
+    }
+}
+
+function movePages() {
+    var pages = $("#pagestomove").val().split(",");
+    var target = $("#targetindx").val()
+    thumbs.document.movePages(pages, target,
+        appendStatus("Pages " + pages + "  were moved to " + target))
 }

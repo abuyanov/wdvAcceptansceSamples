@@ -42,7 +42,7 @@ $(function () {
             minwidth: 60,
             // Note that specify relative URL to our
             // sample document on server here:
-            documenturl: 'Documents/Example_.pdf',
+            documenturl: 'Documents/Test.pdf',
             allowdragdrop: true,
             viewer: viewer,
             allowannotations: true

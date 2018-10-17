@@ -1,7 +1,8 @@
 ﻿.main-container {
     display: box;
     display: flex;
-    flex-direction: row,
+    flex-direction: row;
+    justify-content: flex-start;
     margin: 4px 0 4px 0
 }
 
@@ -13,6 +14,11 @@
 .viewer-container {
     padding: 3px;
     margin: 4px 0 4px 0
+}
+
+.page-operation-container{
+    display: flex;
+    flex-direction:column
 }
 
 body {

@@ -7,7 +7,7 @@
     <title>Web Document Viewer Example</title>
     <!-- Script includes for Web Viewing -->
     <script src="Scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
     <script src="Scripts/raphael-min.js"></script>
     <script src="Scripts/atalaWebDocumentViewer.js" type="text/javascript"></script>
     <script src="Scripts/wdvmanager.js" type="text/javascript"></script>
