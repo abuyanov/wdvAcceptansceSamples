@@ -10,6 +10,7 @@ $(function () {
     try {
         // URL that points to our Web Document Viewer handler
         var serverUrl = 'WebDocViewerHandler.ashx';
+        var initDocument = 'Documents/Test.pdf'
         // Initialize Web Viewing
         viewer = new Atalasoft.Controls.WebDocumentViewer({
             parent: $('.atala-document-container'),
@@ -28,7 +29,6 @@ $(function () {
             minwidth: 60,
             // Note that specify relative URL to our
             // sample document on server here:
-            documenturl: 'Documents/Test.pdf',
             viewer: viewer,
             allowannotations: true,
             allowdragdrop: true,
@@ -36,15 +36,15 @@ $(function () {
             selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.SelectedOrder
         });
 
-        viewer.bind({
-            'documentloaded':onDocLoaded,
-        });
-
         thumbs.bind({
             'thumbdragstart': onDragDtart,
             'thumbdragend': onDragEnd,
-            'thumbdragcomplete': onDragComplete
+            'thumbdragcomplete': onDragComplete,
+            //'thumbselected': onThumbSelected,
+            //'thumbdeselected':onThumbDeselected
         });
+
+        openFile(initDocument);
 
     } catch (error) {
         alert('Thrown error: ' + error.description);
@@ -53,7 +53,11 @@ $(function () {
 
 function onSelectFile(filecombo) {
     var file = filecombo.val();
-    thumbs.OpenUrl(file);
+    openFile(file)
+}
+
+function openFile(filename) {
+    thumbs.OpenUrl(filename, '', '', onDocLoaded);
 }
 
 
@@ -96,5 +100,13 @@ function onDocLoaded() {
     var numPages = viewer.getDocumentInfo().count
     appendStatus("Document contains " + numPages + " pages.")
     var upLimit = numPages - 1
-    $("#PageToSelectNum").setAttribute('max', upLimit)
+    document.getElementById('PageToSelectNum').setAttribute('max', upLimit);
+}
+
+function onThumbSelected(e) {
+    appendStatus("Thumb selected " + e.index);
+}
+
+function onThumbDeselected(e) {
+    appendStatus("Thumb unselected " + e.index);
 }
