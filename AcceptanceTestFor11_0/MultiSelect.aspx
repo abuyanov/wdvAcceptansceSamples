@@ -14,23 +14,21 @@
     <!-- Style for Web Viewer -->
     <link href="Content/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
     <link href="Scripts/atalaWebDocumentViewer.css" rel="Stylesheet" type="text/css" />
+    <link href="Content/MultiSelect.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <h1>Atalasoft Web Document Viewer Demo</h1>
     <form id="WDVForm" runat="server">
-        <table>
-            <tr>
-                <td>
-                    <asp:DropDownList ID="FileSelectionList" runat="server" onchange="onSelectFile($(FileSelectionList));" style="width: 200px;float:left"></asp:DropDownList>
-                </td>
-                <td><div class="atala-document-toolbar" style="width: 900px;float:left"></div></td>
-            </tr>
-            <tr>
-             <td> <div class="atala-document-thumbnailer" style="width: 200px; height: 500px; float: left"></div></td>
-                <td> <div class="atala-document-container" style="width: 900px; height: 500px; float: left"></div> </td>
-            </tr>
-        </table>
-
+        <div class="main-container">
+            <div class ="thumb-container">
+                <asp:DropDownList ID="FileSelectionList" runat="server" onchange="onSelectFile($(FileSelectionList));" style="width: 200px;float:left"></asp:DropDownList>
+                <div class="atala-document-thumbnailer" style="width: 200px; height: 500px; float: left"></div>
+            </div>
+            <div class="viewer-container">
+                <div class="atala-document-toolbar" style="width: 900px;float:left"></div>
+                <div class="atala-document-container" style="width: 900px; height: 500px; float: left"></div>
+            </div>
+        </div>
         <div>
             <h3>Status:</h3>
             <div id="status" style="width:670px; height:150px; overflow:scroll; border:solid 1px #CCC;"></div>

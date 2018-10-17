@@ -33,7 +33,7 @@ $(function () {
             allowannotations: true,
             allowdragdrop: true,
             selectionmode: Atalasoft.Utils.SelectionMode.MultiSelect,
-            selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.SelectedOrder
+            selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.ItemIndexOrder
         });
 
         thumbs.bind({

@@ -1,0 +1,19 @@
+﻿.main-container {
+    display: box;
+    display: flex;
+    flex-direction: row,
+    margin: 4px 0 4px 0
+}
+
+.thumb-container {
+    padding: 3px;
+    margin: 4px 0 4px 0,
+}
+
+.viewer-container {
+    padding: 3px;
+    margin: 4px 0 4px 0
+}
+
+body {
+}
