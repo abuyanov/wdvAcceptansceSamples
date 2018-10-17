@@ -140,3 +140,10 @@ function movePages() {
     thumbs.document.movePages(pages, target,
         appendStatus("Pages " + pages + "  were moved to " + target))
 }
+
+function insertPages() {
+    var pages = $("#pagestoinsert").val().split(",");
+    var srcdoc = $("#InsertDropDownList").val();
+    var insIndex = $("#targetinsindx").val();
+    thumbs.document.insertPages(srcdoc, pages, insIndex, appendStatus("Pages were inserted."))
+};

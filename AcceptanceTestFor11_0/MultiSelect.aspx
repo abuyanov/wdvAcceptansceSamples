@@ -48,9 +48,16 @@
                 </div>
                <div>
                     <h3>Move pages</h3>
-                    Pages: <br> <input type="text" name="pagestomove" id="pagestomove" /> <br />
-                    Target index: <br> <input type="number" name="tragetindex" id="targetindx" min="0"/> <br />
+                    Pages: <input type="text" name="pagestomove" id="pagestomove" /> <br />
+                    Target index: <input type="number" name="tragetindex" id="targetindx" min="0"/> <br />
                     <input type="button" id="btnMovePages" onclick="movePages();" value="Move Pages" />
+                </div>
+                <div>
+                    <h3>Insert pages</h3>
+                    From: <asp:DropDownList ID="InsertDropDownList" runat="server" style="width: 200px"></asp:DropDownList> <br />
+                    get pages: <input type="text" name="pagestomove" id="pagestoinsert" /> <br />
+                    insert index: <input type="number" name="tragetindex" id="targetinsindx" min="0"/>
+                    <input type="button" id="btnInsertPages" onclick="insertPages();" value="Insert Pages" />
                 </div>
             </div> 
             

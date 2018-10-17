@@ -19,6 +19,7 @@ namespace AcceptanceTestFor11_0
                     if (validExtensions.Contains(Path.GetExtension(path).ToLower()))
                     {
                         FileSelectionList.Items.Add(imagesPath + Path.GetFileName(path));
+                        InsertDropDownList.Items.Add(imagesPath + Path.GetFileName(path));
                     }
                 }
             }
