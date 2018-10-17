@@ -28,11 +28,17 @@
                 <div class="atala-document-toolbar" style="width: 900px;float:left"></div>
                 <div class="atala-document-container" style="width: 900px; height: 500px; float: left"></div>
             </div>
+            <div>
+                Page number: <input type="number" name="pagetoselect" id="PageToSelectNum" min="0"/>
+                <input type="button" id="btnSelectPage" onclick="selectPage();" value="Add to Selected" />
+                <input type="button" id="btnDeselectPage" onclick="deselectPage();" value="Select this page only" />
+            </div>
         </div>
         <div>
             <h3>Status:</h3>
             <div id="status" style="width:670px; height:150px; overflow:scroll; border:solid 1px #CCC;"></div>
             <input type="button" id ="btnGetSelectedPages" class="ui-button" onclick="getSelectedPages();" value="Get Selected Pages" />
+            <input type="button" id ="btnGetSelectedPage" class="ui-button" onclick="getSelectedPage();" value="Get Selected Page" />
         </div>
 </form>
 </body>

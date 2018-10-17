@@ -33,7 +33,11 @@ $(function () {
             allowannotations: true,
             allowdragdrop: true,
             selectionmode: Atalasoft.Utils.SelectionMode.MultiSelect,
-            selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.ItemIndexOrder
+            selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.SelectedOrder
+        });
+
+        viewer.bind({
+            'documentloaded':onDocLoaded,
         });
 
         thumbs.bind({
@@ -53,7 +57,7 @@ function onSelectFile(filecombo) {
 }
 
 
-//Drug and Drop events
+//Drag and Drop events
 
 function onDragDtart(evnt) {
     var selectedPages = thumbs.getSelectedPagesIndices();
@@ -68,8 +72,29 @@ function onDragComplete(evnt, data) {
     appendStatus("Drug'n'drop completed.")
     //appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
 }
-
+// Other functions
 function getSelectedPages() {
     var selectedPages = thumbs.getSelectedPagesIndices();
     appendStatus("Selected pages numbers are: " + selectedPages)
+}
+
+function getSelectedPage() {
+    appendStatus("Selected pages numbers are: " + thumbs.getSelectedPageIndex())
+}
+
+function selectPage() {
+    var pageToSelect = $("#PageToSelectNum").val()
+    thumbs.selectThumb(pageToSelect, true)
+}
+
+function deselectPage() {
+    var pageToSelect = $("#PageToSelectNum").val()
+    thumbs.selectThumb(pageToSelect, false)
+}
+
+function onDocLoaded() {
+    var numPages = viewer.getDocumentInfo().count
+    appendStatus("Document contains " + numPages + " pages.")
+    var upLimit = numPages - 1
+    $("#PageToSelectNum").setAttribute('max', upLimit)
 }
