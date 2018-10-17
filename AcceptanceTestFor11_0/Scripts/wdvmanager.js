@@ -111,3 +111,10 @@ function onDrugComplete(evnt, data) {
     appendStatus("Drug'n'drop completed.")
     //appendStatus(`Page drugged from page ${data.dragindex} to page ${data.dropindex} data.`)
 }
+
+function insertPages() {
+    var page = $("#pagetomove").val()
+    var insIndex = $("#targetinsindx").val();
+    thumbs.document.insertPage(null, thumb2.document.getPageReference(page), insIndex);
+    appendStatus("Page were moved");
+}

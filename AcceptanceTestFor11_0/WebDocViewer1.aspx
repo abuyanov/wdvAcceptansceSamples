@@ -7,7 +7,7 @@
     <title>Web Document Viewer Example</title>
     <!-- Script includes for Web Viewing -->
     <script src="Scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
     <script src="Scripts/raphael-min.js"></script>
     <script src="Scripts/atalaWebDocumentViewer.js" type="text/javascript"></script>
     <script src="Scripts/wdvmanager.js" type="text/javascript"></script>
@@ -38,6 +38,13 @@
                 
             </tr>
         </table>
+
+        <div>
+            <h3>Insert pages from second to first thumbnailer</h3>
+            Page: <input type="text" name="pagetomove" id="pagetomove" /> <br />
+            Insert index: <input type="number" name="tragetindex" id="targetinsindx" min="0"/>
+            <input type="button" id="btnInsertPages" onclick="insertPages();" value="Insert Pages" />
+        </div>
 
         <div>
             <h3>Status:</h3>
