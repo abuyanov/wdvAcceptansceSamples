@@ -23,7 +23,7 @@
             <tr>
                 <td>
                     <asp:DropDownList ID="FileSelectionListLeft" runat="server" onchange="onSelectFile($(FileSelectionListLeft), thumbs);" style="width: 200px;float:left"></asp:DropDownList>
-                     <input type="button" id ="btnActivateLeft" class="ui-button" onclick="activateLeftThumb();" value="Activate" disabled />
+                     <input type="button" id ="btnActivateLeft" class="ui-button" onclick="activateLeftThumb();" value="Activate"/>
                 </td>
                 <td><div class="atala-document-toolbar" style="width: 900px;float:left"></div></td>
                 <td>

@@ -23,3 +23,13 @@
 
 body {
 }
+
+.atala_thumb_caption{
+    bottom: 5px;
+    height: 0.9em;
+    background:yellow;
+}
+
+.atala_thumb_caption:hover{
+    font-weight: bold;
+}

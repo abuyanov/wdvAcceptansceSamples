@@ -31,7 +31,8 @@ $(function () {
             documenturl: 'Documents/Test.pdf',
             viewer: viewer,
             allowannotations: true,
-            allowdragdrop: true
+            allowdragdrop: true,
+            showthumbcaption: true
         });
 
         // Initialize Second Thumbnail
@@ -45,7 +46,8 @@ $(function () {
             documenturl: 'Documents/Test.pdf',
             allowdragdrop: true,
             viewer: viewer,
-            allowannotations: true
+            allowannotations: true,
+            showthumbcaption: true
         });
 
         thumb2.bind({
