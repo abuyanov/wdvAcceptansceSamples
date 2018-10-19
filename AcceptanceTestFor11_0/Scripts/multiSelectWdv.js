@@ -1,4 +1,4 @@
-﻿var viewer, thumbs, thumb2;
+﻿var viewer, thumbs;
 
 function appendStatus(msg) {
     var stat = $("#status");
