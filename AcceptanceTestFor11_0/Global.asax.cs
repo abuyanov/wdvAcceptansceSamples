@@ -1,4 +1,5 @@
 ﻿using Atalasoft.Imaging.Codec;
+using Atalasoft.Imaging.Codec.Office;
 using Atalasoft.Imaging.Codec.Pdf;
 using System;
 
@@ -10,6 +11,7 @@ namespace AcceptanceTestFor11_0
         protected void Application_Start(object sender, EventArgs e)
         {
             RegisteredDecoders.Decoders.Add(new PdfDecoder());
+            RegisteredDecoders.Decoders.Add(new OfficeDecoder());
         }
 
         protected void Session_Start(object sender, EventArgs e)

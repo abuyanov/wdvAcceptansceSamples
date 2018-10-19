@@ -12,7 +12,7 @@ namespace AcceptanceTestFor11_0
             {
                 string imagesPath = "Documents/";
                 string[] filePaths = Directory.GetFiles(MapPath(imagesPath));
-                var validExtensions = new List<string> { ".tiff", ".tif", ".jpg", ".jpeg", ".png", ".pdf", ".doc", ".docx" };
+                var validExtensions = new List<string> { ".tiff", ".tif", ".jpg", ".jpeg", ".png", ".bmp", ".pdf", ".doc", ".docx",".rtf",".gif",".nef",".pptx"};
                 foreach (string path in filePaths)
                 {
                     if (validExtensions.Contains(Path.GetExtension(path).ToLower()))

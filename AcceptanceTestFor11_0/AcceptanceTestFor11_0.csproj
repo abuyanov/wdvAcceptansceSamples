@@ -55,6 +55,9 @@
     <Reference Include="Atalasoft.dotImage.Ocr, Version=11.0.0.517, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
       <HintPath>..\packages\Atalasoft.dotImage.Ocr.x86.11.0.0.11517\lib\net452\Atalasoft.dotImage.Ocr.dll</HintPath>
     </Reference>
+    <Reference Include="Atalasoft.dotImage.Office, Version=11.0.0.517, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.0.0.11517\lib\net452\Atalasoft.dotImage.Office.dll</HintPath>
+    </Reference>
     <Reference Include="Atalasoft.dotImage.Pdf, Version=11.0.0.517, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
       <HintPath>..\packages\Atalasoft.dotImage.Pdf.x86.11.0.0.11517\lib\net452\Atalasoft.dotImage.Pdf.dll</HintPath>
     </Reference>
@@ -77,6 +80,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Perceptive.DocumentFilters, Version=11.4.0.2822, Culture=neutral, PublicKeyToken=ef6160c802066cff, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atalasoft.dotImage.Office.x86.11.0.0.11517\lib\net452\Perceptive.DocumentFilters.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -265,6 +271,7 @@
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.0.0.11517\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.0.0.11517\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Atalasoft.dotImage.WebControls.x86.11.0.0.11517\build\Atalasoft.dotImage.WebControls.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.WebControls.x86.11.0.0.11517\build\Atalasoft.dotImage.WebControls.x86.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.dotImage.Office.x86.11.0.0.11517\build\Atalasoft.dotImage.Office.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.dotImage.Office.x86.11.0.0.11517\build\Atalasoft.dotImage.Office.x86.targets'))" />
   </Target>
   <Import Project="..\packages\Atalasoft.dotImage.Lib.x86.11.0.0.11517\build\Atalasoft.dotImage.Lib.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x86.11.0.0.11517\build\Atalasoft.dotImage.Lib.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.x86.11.0.0.11517\build\Atalasoft.dotImage.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.x86.11.0.0.11517\build\Atalasoft.dotImage.x86.targets')" />
@@ -275,6 +282,7 @@
   <Import Project="..\packages\Atalasoft.dotImage.Pdf.x86.11.0.0.11517\build\Atalasoft.dotImage.Pdf.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Pdf.x86.11.0.0.11517\build\Atalasoft.dotImage.Pdf.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.0.0.11517\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.PdfDoc.Bridge.x86.11.0.0.11517\build\Atalasoft.dotImage.PdfDoc.Bridge.x86.targets')" />
   <Import Project="..\packages\Atalasoft.dotImage.WebControls.x86.11.0.0.11517\build\Atalasoft.dotImage.WebControls.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.WebControls.x86.11.0.0.11517\build\Atalasoft.dotImage.WebControls.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.dotImage.Office.x86.11.0.0.11517\build\Atalasoft.dotImage.Office.x86.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Office.x86.11.0.0.11517\build\Atalasoft.dotImage.Office.x86.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
