@@ -57,7 +57,7 @@ $(function () {
             selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.SelectedOrder,
             showthumbcaption: true,
             direction: Atalasoft.Utils.ScrollDirection.Horizontal,
-            
+            allowforms:true
         });
 
         openFile(initDocument);

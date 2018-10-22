@@ -18,6 +18,7 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
+            allowforms: true
             //savefileformat: 'jpg',
             //burn:true
         });
