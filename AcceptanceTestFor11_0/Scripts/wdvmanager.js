@@ -17,7 +17,7 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
-            savefileformat: 'jpg',
+            //savefileformat: 'jpg',
             //burn:true
         });
         // Initialize Thumbnail Viewer

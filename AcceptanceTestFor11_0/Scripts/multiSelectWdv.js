@@ -18,7 +18,7 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
-            savefileformat: 'jpg',
+            //savefileformat: 'jpg',
             //burn:true
         });
         // Initialize Thumbnail Viewer
@@ -34,7 +34,8 @@ $(function () {
             allowdragdrop: true,
             selectionmode: Atalasoft.Utils.SelectionMode.MultiSelect,
             selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.SelectedOrder,
-            showthumbcaption:true
+            showthumbcaption: true,
+            allowforms: true
         });
 
         thumbs.bind({

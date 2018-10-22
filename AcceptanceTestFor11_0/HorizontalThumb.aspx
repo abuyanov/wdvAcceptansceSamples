@@ -28,7 +28,7 @@ $(function () {
     try {
         // URL that points to our Web Document Viewer handler
         var serverUrl = 'WebDocViewerHandler.ashx';
-        var initDocument = 'Documents/Test.pdf'
+        var initDocument = 'Documents/Test.pdf';
         // Initialize Web Viewing
         viewer = new Atalasoft.Controls.WebDocumentViewer({
             parent: $('.atala-document-container'),
@@ -36,7 +36,10 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
-            savefileformat: 'jpg',
+            //savefileformat: 'jpg',
+            persistrotation: false,
+            allowforms:true
+
             //burn:true
         });
         // Initialize Thumbnail Viewer
@@ -53,7 +56,8 @@ $(function () {
             selectionmode: Atalasoft.Utils.SelectionMode.MultiSelect,
             selecteditemsorder: Atalasoft.Utils.SelectedItemsOrder.SelectedOrder,
             showthumbcaption: true,
-            direction: Atalasoft.Utils.ScrollDirection.Horizontal
+            direction: Atalasoft.Utils.ScrollDirection.Horizontal,
+            
         });
 
         openFile(initDocument);
@@ -61,16 +65,33 @@ $(function () {
     } catch (error) {
         alert('Thrown error: ' + error.description);
     }
-        });
+});
 
-function onSelectFile(filecombo) {
-    var file = filecombo.val();
-    openFile(file)
-}
+        function onSelectFile(filecombo) {
+            var file = filecombo.val();
+            openFile(file)
+        }
 
-function openFile(filename) {
-    thumbs.OpenUrl(filename);
-}
+        function openFile(filename) {
+            thumbs.OpenUrl(filename);
+        }
+        
+        function reloadDocument() {
+            var fname = $("#FileSelectionList").val();
+            var fnameWOPath = fname.substr(fname.lastIndexOf('/'), fname.lastIndexOf('.') - fname.lastIndexOf('/'));
+            var newFile = (viewer.config.savefileformat)? viewer.config.savepath + fnameWOPath + viewer.config.savefileformat : viewer.config.savepath + fname.substr(fname.lastIndexOf('/'))
+            var annoFile = viewer.config.savepath + fnameWOPath + ".xmp"
+            thumbs.OpenUrl(newFile, annoFile)
+        }
+
+        function reloadPage() {
+            var fname = $("#FileSelectionList").val();
+            var fnameWOPath = fname.substr(fname.lastIndexOf('/'),fname.lastIndexOf('.')-fname.lastIndexOf('/'));
+            var annoFile = viewer.config.savepath + fnameWOPath + ".xmp"
+            var activePg = thumbs.getSelectedPageIndex()
+            thumbs.reloadPage(activePg, annoFile, false)
+        }
+        
 </script>
 
 <style>
@@ -124,6 +145,14 @@ function openFile(filename) {
                     get pages: <input type="text" name="pagestomove" id="pagestoinsert" /> <br />
                     insert index: <input type="number" name="tragetindex" id="targetinsindx" min="0"/>
                     <input type="button" id="btnInsertPages" onclick="insertPages();" value="Insert Pages" />
+                </div>
+                <div>
+                    <h3>Reload Document</h3>
+                    <input type="button" id="btnReloadDocument" onclick="reloadDocument();" value="Reload" />
+                </div>
+                <div>
+                    <h3>Reload Actuve Page</h3>
+                    <input type="button" id="btnReloadPage" onclick="reloadPage();" value="ReloadPage" />
                 </div>
             </div> 
             
