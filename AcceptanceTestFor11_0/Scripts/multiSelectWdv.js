@@ -18,7 +18,16 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
-            allowforms: true
+            allowforms: true,
+            upload: {
+                enabled:true,
+                uploadpath: 'Upload/Viewer',
+                allowedfiletypes: '.jpg,.pdf,.png,.jpeg,image/tiff',
+                allowedmaxfilesize: 5*1024*1024,
+                allowmultiplefiles: true,
+                allowdragdrop: true,
+                filesuploadconcurrency: 3,
+            }
             //savefileformat: 'jpg',
             //burn:true
         });

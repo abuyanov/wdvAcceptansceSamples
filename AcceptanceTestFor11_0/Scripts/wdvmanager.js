@@ -17,8 +17,7 @@ $(function () {
             serverurl: serverUrl,
             allowannotations: true,
             savepath: 'saved',
-            //savefileformat: 'jpg',
-            //burn:true
+            savefileformat: 'jpg',
         });
         // Initialize Thumbnail Viewer
         thumbs = new Atalasoft.Controls.WebDocumentThumbnailer({
